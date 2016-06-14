@@ -84,6 +84,13 @@ class ViewController: UIViewController {
         
 //        loginButton.center.y += view.bounds.height
         
+        //  *** CLOUDS OFF SCREEN ***
+        cloud1.center.y = view.bounds.width
+        cloud2.center.y = view.bounds.width
+        cloud3.center.y = view.bounds.width
+        cloud4.center.y = view.bounds.width
+
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -102,6 +109,16 @@ class ViewController: UIViewController {
         UIView.animateWithDuration(0.5, delay: 0.4, options: .CurveEaseOut, animations: {
             self.password.center.x += self.view.bounds.width
             }, completion: nil )
+        
+                // **** CLOUDS ***
+        UIView.animateWithDuration(0.5, delay: 0.0, options: .CurveEaseInOut, animations: {
+
+            
+            
+            }, completion: {_ in
+                self.cloud1.removeFromSuperview()
+                
+        })
         
         UIView.animateWithDuration(4.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .CurveEaseOut, animations: {            
             
